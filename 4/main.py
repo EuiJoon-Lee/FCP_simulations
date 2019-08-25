@@ -33,8 +33,8 @@ if __name__ == "__main__":
                 KRT.reg_pool(1500000)  # 2분 = 20블록 1블록에 10만원
                 UST.reg_pool(3750)   # 2분 = 20블록 1블록에 250$
                 continue
-            #KRT.change_pool(max_offer_amount, True)
-            #UST.change_pool(max_ask_amount, False)
+            KRT.change_pool(max_offer_amount, True)
+            UST.change_pool(max_ask_amount, False)
             UST_profit = UST_profit + max_profit
             KRT.reg_pool(1500000)  # 2분 = 20블록 1블록에 10만원
             UST.reg_pool(3750)   # 2분 = 20블록 1블록에 250$
@@ -55,8 +55,8 @@ if __name__ == "__main__":
                 KRT.reg_pool(1500000)  # 2분 = 20블록 1블록에 10만원
                 UST.reg_pool(3750)   # 2분 = 20블록 1블록에 250$
                 continue
-            #UST.change_pool(max_offer_amount, True)
-            #KRT.change_pool(max_ask_amount, False)
+            UST.change_pool(max_offer_amount, True)
+            KRT.change_pool(max_ask_amount, False)
             KRT_profit = KRT_profit + max_profit
             KRT.reg_pool(1500000)  # 2분 = 20블록 1블록에 10만원
             UST.reg_pool(3750)   # 2분 = 20블록 1블록에 250$
