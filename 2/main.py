@@ -30,14 +30,14 @@ if __name__ == "__main__":
             max_profit, max_offer_amount, max_ask_amount = EJ.calculate_profit(
                 KRT, UST, KRT.tobin, deviation, 100)
             if max_profit == None:
-                KRT.reg_pool(2000000)  # 2분 = 20블록 1블록에 10만원
-                UST.reg_pool(5000)   # 2분 = 20블록 1블록에 250$
+                KRT.reg_pool(2000000)  
+                UST.reg_pool(5000)   
                 continue
             KRT.change_pool(max_offer_amount, True)
             UST.change_pool(max_ask_amount, False)
             UST_profit = UST_profit + max_profit
-            KRT.reg_pool(2000000)  # 2분 = 20블록 1블록에 10만원
-            UST.reg_pool(5000)   # 2분 = 20블록 1블록에 250$
+            KRT.reg_pool(2000000)  
+            UST.reg_pool(5000)   
 
             print("Round:", i, "\tKRT->UST", end='\t')
             print("max_profit:", max_profit, "\tmax_offer_amount:",
@@ -45,21 +45,21 @@ if __name__ == "__main__":
             print("UST.pool:", UST.pool, "\tKRT.pool:", KRT.pool)
             print("UST_profit : ", UST_profit)
         elif deviation == 0:
-            KRT.reg_pool(2000000)  # 2분 = 20블록 1블록에 10만원
-            UST.reg_pool(5000)   # 2분 = 20블록 1블록에 250$
+            KRT.reg_pool(2000000)  
+            UST.reg_pool(5000)   
             continue
         else:
             max_profit, max_offer_amount, max_ask_amount = EJ.calculate_profit(
                 UST, KRT, UST.tobin, deviation, 0.1)
             if max_profit == None:
-                KRT.reg_pool(2000000)  # 2분 = 20블록 1블록에 10만원
-                UST.reg_pool(5000)   # 2분 = 20블록 1블록에 250$
+                KRT.reg_pool(2000000)  
+                UST.reg_pool(5000)   
                 continue
             UST.change_pool(max_offer_amount, True)
             KRT.change_pool(max_ask_amount, False)
             KRT_profit = KRT_profit + max_profit
-            KRT.reg_pool(2000000)  # 2분 = 20블록 1블록에 10만원
-            UST.reg_pool(5000)   # 2분 = 20블록 1블록에 250$
+            KRT.reg_pool(2000000)  
+            UST.reg_pool(5000)   
         
             print("Round:", i, "\tUST->KRT", end='\t')
             print("max_profit:", max_profit, "\tmax_offer_amount:",
@@ -67,7 +67,7 @@ if __name__ == "__main__":
             print("UST.pool:", UST.pool, "\tKRT.pool:", KRT.pool)
             print("KRT_profit : ", KRT_profit)
         
-        KRT.reg_pool(2000000)  # 2분 = 20블록 1블록에 10만원
-        UST.reg_pool(5000)   # 2분 = 20블록 1블록에 250$
+        KRT.reg_pool(2000000)  
+        UST.reg_pool(5000)   
     print("UST_Profit :", UST_profit, "KRT_Profit :", KRT_profit )
     
