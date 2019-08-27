@@ -4,8 +4,8 @@ import csv
 
 
 if __name__ == "__main__":
-    KRT = Env(10000000000, 10000000000, 1200.0, 0.0015, "KRT")
-    UST = Env(20000000, 20000000, 1.0, 0.0015, "UST")
+    KRT = Env(10000000000, 10000000000, 1200.0, 0.001, "KRT")
+    UST = Env(20000000, 20000000, 1.0, 0.001, "UST")
     EJ = Agent(["KRT", "UST"], [2000000000, 100000])
     UST_profit = 0 # Total profit in UST(UST->KRT)
     KRT_profit = 0 # Total profit in KRT(KRT->UST)

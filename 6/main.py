@@ -4,8 +4,8 @@ import csv
 
 
 if __name__ == "__main__":
-    KRT = Env(10000000000, 10000000000, 1200.0, 0.0015, "KRT")
-    UST = Env(20000000, 20000000, 1.0, 0.0015, "UST")
+    KRT = Env(10000000000, 10000000000, 1200.0, 0.0012, "KRT")
+    UST = Env(20000000, 20000000, 1.0, 0.0012, "UST")
     EJ = Agent(["KRT", "UST"], [2000000000, 100000])
     UST_profit = 0 # Total profit in UST(UST->KRT)
     KRT_profit = 0 # Total profit in KRT(KRT->UST)
@@ -34,8 +34,8 @@ if __name__ == "__main__":
             max_profit, max_offer_amount, max_ask_amount = EJ.calculate_profit(
                 KRT, UST, KRT.tobin, deviation, 100)
             if max_profit == None:
-                KRT.reg_pool(1000000) 
-                UST.reg_pool(3000)  
+                KRT.reg_pool(750000) 
+                UST.reg_pool(1500)  
                 continue
             else:
                 KRT.change_pool(max_offer_amount, True)
@@ -45,8 +45,8 @@ if __name__ == "__main__":
                 Result_set.append(Result_data)
                 Result_data = []
                 n+=1
-                KRT.reg_pool(1000000) 
-                UST.reg_pool(3000)  
+                KRT.reg_pool(750000) 
+                UST.reg_pool(1500)  
 
             print("Round:", i, "\tKRT->UST", end='\t')
             print("max_profit:", max_profit, "\tmax_offer_amount:",
@@ -55,15 +55,15 @@ if __name__ == "__main__":
             print("UST_profit : ", UST_profit)
         
         elif deviation == 0:
-            KRT.reg_pool(1000000) 
-            UST.reg_pool(3000)  
+            KRT.reg_pool(750000) 
+            UST.reg_pool(1500) 
             continue
         else:
             max_profit, max_offer_amount, max_ask_amount = EJ.calculate_profit(
                 UST, KRT, UST.tobin, deviation, 0.1)
             if max_profit == None:
-                KRT.reg_pool(1000000) 
-                UST.reg_pool(3000)  
+                KRT.reg_pool(750000) 
+                UST.reg_pool(1500) 
                 continue
             else:
                 UST.change_pool(max_offer_amount, True)
@@ -73,8 +73,8 @@ if __name__ == "__main__":
                 Result_set.append(Result_data)
                 Result_data = []
                 n+=1
-                KRT.reg_pool(1000000) 
-                UST.reg_pool(3000)  
+                KRT.reg_pool(750000) 
+                UST.reg_pool(1500)  
         
             print("Round:", i, "\tUST->KRT", end='\t')
             print("max_profit:", max_profit, "\tmax_offer_amount:",
